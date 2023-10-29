@@ -35,19 +35,16 @@ int main(){
         scanf("%d",&p2);
             switch(p2){
             case 1:
-            puts("Extremamente Satisfeito(a);");
+            puts("Velocidade");
             break;
             case 2:
-            puts("Satisfeito(a)");
+            puts("Eficiência");
             break;
             case 3:
-            puts("nem satisfeito(a), nem insatisfeito(a)");
+            puts("Facilidade de acesso");
             break;
             case 4:
-            puts("Pouco satisfeito");
-            break;
-            case 5:
-            puts("Completamente insatisfeito");
+            puts("Comportamento do agente");
             break;
             }
         tPergunta();
@@ -71,7 +68,7 @@ int main(){
             }
         qPergunta();
         scanf("%d",&p3);
-            switch(p1){
+            switch(p3){
             case 1:
             puts("Extremamente Satisfeito(a);");
             break;
@@ -92,4 +89,3 @@ int main(){
         limparTela();
     }while(TRUE);
 }
-
