@@ -5,3 +5,4 @@ void tPergunta();
 void qPergunta();
 void limparBuffer();
 void limparTela();
+void LerCpf();
