@@ -53,3 +53,16 @@ void limparTela(){
     getchar();
     system("cls");
 }
+
+
+
+void LerCpf(){
+    FILE *cpf;
+    cpf = fopen("visitantes.txt", "r");
+    if(cpf == NULL){
+        printf("CPF não cadastrado....");
+     }
+    fscanf(cpf,"Digite seu CPF %d",cpf);
+    fclose(cpf);
+}
+
