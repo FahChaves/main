@@ -1,7 +1,22 @@
+
 #include <stdio.h>
 #include "cadastro.h"
 #include <locale.h>
 #include <stdbool.h>
+
+void cadastroCliente(){
+    puts("********************************************");
+    puts("*                                          *");
+    puts("*                 Cadastro                 *");
+    puts("*                   DE                     *");
+    puts("*                 Clientes                 *");
+    puts("*                                          *");
+    puts("*                                          *");
+    puts("*                       MUSEU-MULTITEMATICO*");
+    puts("********************************************");
+
+
+}
 
 bool validarCPF(const char *cpf) {
     int len = strlen(cpf);
@@ -19,8 +34,9 @@ bool validarCPF(const char *cpf) {
 void registrarVisitante(struct Visitante visitante) {
     FILE *arquivo = fopen("visitantes.txt", "a");
 
-    printf("Informe o nome: ");
-    scanf("%s", visitante.nome);
+     printf("Informe o nome completo: ");
+    scanf(" %[^\n]", visitante.nome);
+
 
     do {
         printf("Digite o CPF (somente números, tudo junto, onze dígitos): ");
@@ -30,13 +46,10 @@ void registrarVisitante(struct Visitante visitante) {
     printf("Informe a idade: ");
     scanf("%d", &visitante.idade);
 
-    printf("Escolha o tipo de ingresso (inteira ou meia): ");
-    scanf("%s", visitante.tipoIngresso);
 
     fprintf(arquivo, "Nome: %s\n", visitante.nome);
     fprintf(arquivo, "CPF: %s\n", visitante.cpf);
     fprintf(arquivo, "Idade: %d\n", visitante.idade);
-    fprintf(arquivo, "Tipo de Ingresso: %s\n", visitante.tipoIngresso);
 
     fclose(arquivo);
 }
@@ -48,7 +61,6 @@ struct Visitante carregarArquivo() {
         fscanf(arquivo, "Nome: %s\n", visitante.nome);
         fscanf(arquivo, "CPF: %s\n", visitante.cpf);
         fscanf(arquivo, "Idade: %d\n", &visitante.idade);
-        fscanf(arquivo, "Tipo de Ingresso: %s\n", visitante.tipoIngresso);
         fclose(arquivo);
     }
     return visitante;
@@ -62,11 +74,9 @@ void criarRecibo(struct Visitante visitante) {
         fprintf(recibo, "Nome: %s\n", visitante.nome);
         fprintf(recibo, "CPF: %s\n", visitante.cpf);
         fprintf(recibo, "Idade: %d\n", visitante.idade);
-        fprintf(recibo, "Tipo de Ingresso: %s\n", visitante.tipoIngresso);
         fprintf(recibo, "=========================\n");
         fclose(recibo);
     } else {
         printf("Não foi possível criar o recibo.\n");
     }
 }
-
