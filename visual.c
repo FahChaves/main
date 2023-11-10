@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 
 void iniciarPesquisa(){
@@ -9,7 +10,7 @@ void iniciarPesquisa(){
 }
 
 void  pPergunta(p1){
-    puts("Nos fale o que achou sobre o nosso museu? (selecione um)\n");
+    puts("\nNos fale o que achou sobre o nosso museu? (selecione um)\n");
     puts("1 - Extremamente Satisfeito(a)");
     puts("2 - Satisfeito(a)");
     puts("3 - nem satisfeito(a), nem insatisfeito(a)");
